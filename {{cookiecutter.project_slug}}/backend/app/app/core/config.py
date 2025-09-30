@@ -34,11 +34,11 @@ class Settings(BaseSettings):
     PROJECT_NAME: str
     SENTRY_DSN: HttpUrl | None = None
 
-    @field_validator("SENTRY_DSN", mode="before")
-    def sentry_dsn_can_be_blank(cls, v: str) -> str | None:
-        if isinstance(v, str) and len(v) == 0:
-            return None
-        return v
+    # @field_validator("SENTRY_DSN", mode="before")
+    # def sentry_dsn_can_be_blank(cls, v: str) -> str | None:
+    #     if isinstance(v, str) and len(v) == 0:
+    #         return None
+    #     # return v
 
     # GENERAL SETTINGS
 
